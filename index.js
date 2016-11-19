@@ -1,43 +1,45 @@
 // Color variables
-const veryLightGray = '#dbe6ec';
-const lightGray = '#99a9b3';
-const gray = '#67747c';
-const darkGray = '#3b444f';
-const veryDarkGray = '#2c3643';
-const cyan = '#0fdebd';
-const blue = '#288ad6';
-const purple = '#ff708e';
-const green = '#16c98d';
-const red = '#fa5e5b';
-const orange = '#ffc83f';
-const lightOrange = '#feef6d';
-const softblue = '#8abee5';
-const softgreen = '#c7e6aa';
+const veryLightGray = '#DBE6EC';
+const lightGray     = '#99A9B3';
+const gray          = '#67747C';
+const darkGray      = '#3B444F';
+const veryDarkGray  = '#2C3643';
+const mostDarkGray  = '#212933';
+const cyan          = '#0FDEBD';
+const blue          = '#288AD6';
+const purple        = '#FF708E';
+const green         = '#16C98D';
+const red           = '#FA5E5B';
+const orange        = '#FFC83F';
+const lightOrange   = '#FEEF6D';
+const softblue      = '#8ABEE5';
+const softgreen     = '#C7E6AA';
+const white         = '#FFFFFF';
 
 
 // Definitions
 const backgroundColor = veryDarkGray;
 const foregroundColor = veryLightGray;
-const cursorColor = foregroundColor;
-const borderColor = backgroundColor;
+const cursorColor     = foregroundColor;
+const borderColor     = backgroundColor;
 
 const colors = [
   backgroundColor,
-  red, // red
-  green, // green
-  orange, // yellow
-  blue, // blue
-  orange, // pink
-  cyan, // cyan
-  veryLightGray, // light gray
-  lightGray, // medium gray
-  red, // red
-  green, // green
-  orange, // yellow
-  blue, // blue
-  orange, // pink
-  cyan, // cyan
-  '#ffffff', // white
+  red,            // red
+  green,          // green
+  orange,         // yellow
+  blue,           // blue
+  orange,         // pink
+  cyan,           // cyan
+  veryLightGray,  // light gray
+  lightGray,      // medium gray
+  red,            // red
+  green,          // green
+  orange,         // yellow
+  blue,           // blue
+  orange,         // pink
+  cyan,           // cyan
+  white,          // white
   foregroundColor,
 ];
 
@@ -63,13 +65,13 @@ exports.decorateConfig = config => {
         left: 0;
       }
       .tabs_list {
-        background-color: #21252b !important;
-        border-bottom-color: rgba(0,0,0,.15) !important;
+        background-color: ${mostDarkGray} !important;
+        border-bottom-color: ${mostDarkGray} !important;
       }
       .tab_tab.tab_active {
         font-weight: 500;
         background-color: ${backgroundColor};
-        border-color: rgba(0,0,0,.27) !important;
+        border-color: ${backgroundColor} !important;
       }
       .tab_tab.tab_active::before {
         border-bottom-color: ${backgroundColor};

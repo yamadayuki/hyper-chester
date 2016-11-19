@@ -6,11 +6,12 @@
 
 1. Open Hyper's preferences with `Cmd+,` (or manually at ~/.hyper.js) with your editor.
 2. Update your list of plugins to include `hyper-chester`, like so:
-```js
-plugins: [
-  'hyper-chester',
-],
-```
+
+  ```js
+  plugins: [
+    'hyper-chester',
+  ],
+  ```
 3. Fully reload Hyper (`Cmd+Shift+R`), and tada!
 
 ### License

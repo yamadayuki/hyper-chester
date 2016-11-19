@@ -25,7 +25,7 @@ const colors = [
   backgroundColor,
   red, // red
   green, // green
-  lightOrange, // yellow
+  orange, // yellow
   blue, // blue
   orange, // pink
   cyan, // cyan
@@ -33,7 +33,7 @@ const colors = [
   lightGray, // medium gray
   red, // red
   green, // green
-  lightOrange, // yellow
+  orange, // yellow
   blue, // blue
   orange, // pink
   cyan, // cyan

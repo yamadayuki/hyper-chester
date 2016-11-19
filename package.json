@@ -1,0 +1,12 @@
+{
+  "name": "hyper-chester",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "maintainer": [
+    {
+      "name": "Yuki Yamada",
+      "email": "yamadayuuki0818@gmail.com"
+    }
+  ]
+}

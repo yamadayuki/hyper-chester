@@ -53,6 +53,9 @@ exports.decorateConfig = config => {
     colors,
     termCSS: `
       ${config.termCSS || ''}
+      span {
+        background-color: transparent !important;
+      }
       .cursor-node {
         mix-blend-mode: difference;
       }

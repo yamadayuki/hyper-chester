@@ -79,6 +79,9 @@ exports.decorateConfig = config => {
       .tab_tab.tab_active::before {
         border-bottom-color: ${backgroundColor};
       }
+      .splitpane_divider {
+        background-color: ${mostDarkGray} !important;
+      }
     `
   });
 }

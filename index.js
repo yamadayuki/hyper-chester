@@ -1,20 +1,20 @@
 // Color variables
-const veryLightGray = '#DBE6EC';
-const lightGray     = '#99A9B3';
-const gray          = '#67747C';
-const darkGray      = '#3B444F';
-const veryDarkGray  = '#2C3643';
-const mostDarkGray  = '#212933';
-const cyan          = '#0FDEBD';
-const blue          = '#288AD6';
-const purple        = '#FF708E';
-const green         = '#16C98D';
-const red           = '#FA5E5B';
-const orange        = '#FFC83F';
-const lightOrange   = '#FEEF6D';
-const softblue      = '#8ABEE5';
-const softgreen     = '#C7E6AA';
-const white         = '#FFFFFF';
+const veryLightGray = 'rgba(219, 230, 236, 1)';
+const lightGray     = 'rgba(153, 169, 179, 1)';
+const gray          = 'rgba(103, 116, 124, 1)';
+const darkGray      = 'rgba(59, 68, 79, 1)';
+const veryDarkGray  = 'rgba(44, 54, 68, 0.7)';
+const mostDarkGray  = 'rgba(33, 41, 51, 0.7)';
+const cyan          = 'rgba(16, 222, 189, 1)';
+const blue          = 'rgba(40, 138, 214, 1)';
+const purple        = 'rgba(255, 112, 142, 1)';
+const green         = 'rgba(22, 201, 141, 1)';
+const red           = 'rgba(250, 94, 91, 1)';
+const orange        = 'rgba(255, 200, 62, 1)';
+const lightOrange   = 'rgba(254, 239, 109, 1)';
+const softblue      = 'rgba(139, 191, 230, 1)';
+const softgreen     = 'rgba(199, 230, 170, 1)';
+const white         = 'rgba(255, 255, 255, 1)';
 
 
 // Definitions
@@ -44,6 +44,8 @@ const colors = [
 ];
 
 
+exports.onWindow = browserWindow => browserWindow.setVibrancy('ultra-dark');
+
 exports.decorateConfig = config => {
   return Object.assign({}, config, {
     foregroundColor,
@@ -69,7 +71,6 @@ exports.decorateConfig = config => {
       }
       .tabs_list {
         background-color: ${mostDarkGray} !important;
-        border-bottom-color: ${mostDarkGray} !important;
       }
       .tab_tab.tab_active {
         font-weight: 500;
@@ -79,8 +80,20 @@ exports.decorateConfig = config => {
       .tab_tab.tab_active::before {
         border-bottom-color: ${backgroundColor};
       }
+      .tabs_borderShim {
+        opacity: 0;
+      }
+      .term_fit:not(.term_term) {
+        opacity: 0.7;
+      }
+      .term_fit.term_active {
+        opacity: 1;
+        transition: opacity 0.1s ease;
+        will-change: opacity;
+      }
       .splitpane_divider {
         background-color: ${mostDarkGray} !important;
+        opacity: 0.7;
       }
     `
   });

@@ -3,8 +3,8 @@ const veryLightGray = 'rgba(219, 230, 236, 1)';
 const lightGray     = 'rgba(153, 169, 179, 1)';
 const gray          = 'rgba(103, 116, 124, 1)';
 const darkGray      = 'rgba(59, 68, 79, 1)';
-const veryDarkGray  = 'rgba(44, 54, 68, 0.7)';
-const mostDarkGray  = 'rgba(33, 41, 51, 0.7)';
+const veryDarkGray  = 'rgba(44, 54, 68, 0.3)';
+const mostDarkGray  = 'rgba(33, 41, 51, 0.3)';
 const cyan          = 'rgba(16, 222, 189, 1)';
 const blue          = 'rgba(40, 138, 214, 1)';
 const purple        = 'rgba(255, 112, 142, 1)';
@@ -55,9 +55,6 @@ exports.decorateConfig = config => {
     colors,
     termCSS: `
       ${config.termCSS || ''}
-      span {
-        background-color: transparent !important;
-      }
       .cursor-node {
         mix-blend-mode: difference;
       }

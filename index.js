@@ -1,52 +1,77 @@
-// Color variables
-const veryLightGray = 'rgba(219, 230, 236, 1)';
-const lightGray     = 'rgba(153, 169, 179, 1)';
-const gray          = 'rgba(103, 116, 124, 1)';
-const darkGray      = 'rgba(59, 68, 79, 1)';
-const veryDarkGray  = 'rgba(44, 54, 68, 0.3)';
-const mostDarkGray  = 'rgba(33, 41, 51, 0.3)';
-const cyan          = 'rgba(16, 222, 189, 1)';
-const blue          = 'rgba(40, 138, 214, 1)';
-const purple        = 'rgba(255, 112, 142, 1)';
-const green         = 'rgba(22, 201, 141, 1)';
-const red           = 'rgba(250, 94, 91, 1)';
-const orange        = 'rgba(255, 200, 62, 1)';
-const lightOrange   = 'rgba(254, 239, 109, 1)';
-const softblue      = 'rgba(139, 191, 230, 1)';
-const softgreen     = 'rgba(199, 230, 170, 1)';
-const white         = 'rgba(255, 255, 255, 1)';
+function createColorMap(opacity) {
+  if (!opacity) opacity = 1;
 
+  const colorMap = new Map([
+    ['veryLightGray', `rgba(219, 230, 236, 1)`],
+    ['lightGray',     `rgba(153, 169, 179, 1)`],
+    ['gray',          `rgba(103, 116, 124, 1)`],
+    ['darkGray',      `rgba(59, 68, 79, 1)`],
+    ['veryDarkGray',  `rgba(44, 54, 68, ${opacity})`],
+    ['mostDarkGray',  `rgba(33, 41, 51, ${opacity})`],
+    ['cyan',          `rgba(16, 222, 189, 1)`],
+    ['blue',          `rgba(40, 138, 214, 1)`],
+    ['purple',        `rgba(255, 112, 142, 1)`],
+    ['green',         `rgba(22, 201, 141, 1)`],
+    ['red',           `rgba(250, 94, 91, 1)`],
+    ['orange',        `rgba(255, 200, 62, 1)`],
+    ['lightOrange',   `rgba(254, 239, 109, 1)`],
+    ['softblue',      `rgba(139, 191, 230, 1)`],
+    ['softgreen',     `rgba(199, 230, 170, 1)`],
+    ['white',         `rgba(255, 255, 255, 1)`],
+  ]);
 
-// Definitions
-const backgroundColor = veryDarkGray;
-const foregroundColor = veryLightGray;
-const cursorColor     = foregroundColor;
-const borderColor     = backgroundColor;
-
-const colors = [
-  backgroundColor,
-  red,            // red
-  green,          // green
-  orange,         // yellow
-  blue,           // blue
-  orange,         // pink
-  cyan,           // cyan
-  veryLightGray,  // light gray
-  lightGray,      // medium gray
-  red,            // red
-  green,          // green
-  orange,         // yellow
-  blue,           // blue
-  orange,         // pink
-  cyan,           // cyan
-  white,          // white
-  foregroundColor,
-];
+  return colorMap;
+}
 
 
 exports.onWindow = browserWindow => browserWindow.setVibrancy('ultra-dark');
 
 exports.decorateConfig = config => {
+  const hyperChesterOpacity = config.hyperChesterOpacity;
+  const colorMap = createColorMap(hyperChesterOpacity);
+
+  const veryLightGray = colorMap.get('veryLightGray');
+  const lightGray     = colorMap.get('lightGray');
+  const gray          = colorMap.get('gray');
+  const darkGray      = colorMap.get('darkGray');
+  const veryDarkGray  = colorMap.get('veryDarkGray');
+  const mostDarkGray  = colorMap.get('mostDarkGray');
+  const cyan          = colorMap.get('cyan');
+  const blue          = colorMap.get('blue');
+  const purple        = colorMap.get('purple');
+  const green         = colorMap.get('green');
+  const red           = colorMap.get('red');
+  const orange        = colorMap.get('orange');
+  const lightOrange   = colorMap.get('lightOrange');
+  const softblue      = colorMap.get('softblue');
+  const softgreen     = colorMap.get('softgreen');
+  const white         = colorMap.get('white');
+
+  const backgroundColor = veryDarkGray;
+  const foregroundColor = veryLightGray;
+  const cursorColor     = foregroundColor;
+  const borderColor     = backgroundColor;
+
+  const colors = [
+    backgroundColor,
+    red,            // red
+    green,          // green
+    orange,         // yellow
+    blue,           // blue
+    orange,         // pink
+    cyan,           // cyan
+    veryLightGray,  // light gray
+    lightGray,      // medium gray
+    red,            // red
+    green,          // green
+    orange,         // yellow
+    blue,           // blue
+    orange,         // pink
+    cyan,           // cyan
+    white,          // white
+    foregroundColor,
+  ];
+
   return Object.assign({}, config, {
     foregroundColor,
     backgroundColor,

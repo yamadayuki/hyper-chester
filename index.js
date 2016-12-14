@@ -24,10 +24,14 @@ function createColorMap(opacity) {
 }
 
 
-exports.onWindow = browserWindow => browserWindow.setVibrancy('ultra-dark');
+let vibrancy = 'ultra-dark';
 
 exports.decorateConfig = config => {
-  const hyperChesterOpacity = config.hyperChesterOpacity;
+  if (config.hyperChester.vibrancy) {
+    vibrancy = config.hyperChester.vibrancy;
+  }
+
+  const hyperChesterOpacity = config.hyperChester.opacity;
   const colorMap = createColorMap(hyperChesterOpacity);
 
   const veryLightGray = colorMap.get('veryLightGray');
@@ -120,3 +124,5 @@ exports.decorateConfig = config => {
     `
   });
 }
+
+exports.onWindow = browserWindow => browserWindow.setVibrancy(vibrancy);

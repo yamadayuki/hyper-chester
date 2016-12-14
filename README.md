@@ -14,6 +14,28 @@
   ```
 3. Fully reload Hyper (`Cmd+Shift+R`), and tada!
 
+#### Vibrancy
+
+Zeit released Hyper.app ver 1.0.0 🎉
+This version includes **Vibrancy** support on macOS. So this `hyper-chester` support that vibrancy.
+If you hope to use this, you can add vibrancy and opacity in your config.
+You can choose the vibrancy from a [list of available vibrancy types](0https://github.com/electron/electron/blob/master/docs/api/browser-window.md#winsetvibrancytype-macos).
+
+```js
+module.exports = {
+  config: {
+    ...
+    hyperChester: {
+      vibrancy: 'ultra-dark',
+      opacity: 0.3,
+    },
+  },
+  ...
+};
+```
+
+![vibrancy](./hyper-chester-vibrancy.png)
+
 ### License
 
 MIT

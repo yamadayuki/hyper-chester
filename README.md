@@ -34,6 +34,8 @@ module.exports = {
 };
 ```
 
+![vibrancy](./hyper-chester-vibrancy.png)
+
 ### License
 
 MIT

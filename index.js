@@ -25,13 +25,16 @@ function createColorMap(opacity) {
 
 
 let vibrancy = 'ultra-dark';
+let hyperChesterOpacity = 1;
 
 exports.decorateConfig = config => {
-  if (config.hyperChester.vibrancy) {
+  if (config.hyperChester && config.hyperChester.vibrancy) {
     vibrancy = config.hyperChester.vibrancy;
   }
 
-  const hyperChesterOpacity = config.hyperChester.opacity;
+  if (config.hyperChester && config.hyperChester.opacity) {
+    hyperChesterOpacity = config.hyperChester.opacity;
+  }
   const colorMap = createColorMap(hyperChesterOpacity);
 
   const veryLightGray = colorMap.get('veryLightGray');
